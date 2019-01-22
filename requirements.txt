@@ -1,0 +1,6 @@
+Flask==1.0.2
+numpy==1.16.0
+Flask==1.0.2
+jsonify==0.5
+matplotlib==3.0.2
+numpy==1.16.0
