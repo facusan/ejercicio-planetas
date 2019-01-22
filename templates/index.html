@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>Planetas MeLi</title>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row" style="padding-top:20%;margin:0 auto">
+            <div class="col">
+                <form>
+                    <div class="form-group row">
+                        <label for="diasInput" class="col-sm-2 col-form-label">Dias</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="diasInput">
+                        </div>
+                        <input type="button" class="btn btn-primary" value="Predecir Clima" onclick="predecirDia()">
+                        
+                    </div>
+                </form>
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+        <div id="divResult" class="row">
+          
+        </div>
+        <div id="divImageResult" class="row">
+          
+        </div>
+    </div>    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script type="text/JavaScript">
+        function predecirDia(){
+            $.get("/clima", { dia: $('#diasInput').val()} )
+            .done(function( data) {
+                var result = `<h2>El dia ${data.dia} el clima pronosticado es ${data.clima}</h2>`
+                $('#divResult').append(result);
+            });
+            $.get("/imagen", { dia: $('#diasInput').val()} )
+            .done(function( base64_string ) {
+                var image = $("<img>", {
+                "src": "data:image/png;base64," + base64_string
+                });
+                $('#divImageResult').append(image);
+            });
+        }
+        
+    </script>
+  </body>
+</html>

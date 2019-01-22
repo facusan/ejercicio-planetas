@@ -2,26 +2,61 @@ from sistemaSolar import SistemaSolar, Planeta, SentidoOrbita
 from dibujador import DibujadorSistemaSolar
 from predictor import Predictor
 
-ferengi = Planeta('Ferengi',500,0,1, SentidoOrbita.HORARIO,500)
-betasoide = Planeta('Betasoide',2000,0,3, SentidoOrbita.HORARIO,2000)
-vulcano = Planeta('Vulcano',1000,0,5, SentidoOrbita.ANTIHORARIO,1000)
-planetas = [ferengi,betasoide,vulcano]
-sistemaSolar = SistemaSolar(planetas,[0,0])
-predictor = Predictor()
-#sistemaSolar.avanzar_posiciones('02/04/2019')# Fecha sol dentro triangulo
-#sistemaSolar.avanzar_posiciones('02/08/2019')
-#sistemaSolar.avanzar_posiciones('21/03/2027') # Fecha area max
-sistemaSolar.avanzar_posiciones(5)
+import unittest
 
-listaPlanetas = list(map(lambda p: (p.x,p.y), sistemaSolar.planetas))
+class PredictorTest(unittest.TestCase):
 
-area = predictor.calcular_area(listaPlanetas)
-dentroDeTriangulo = predictor.punto_dentro_de_triangulo(listaPlanetas, sistemaSolar.posicion_sol)
-dentroDeRecta = predictor.punto_dentro_de_recta(listaPlanetas, sistemaSolar.posicion_sol)
-print('Area = ' +str(area))
-print('Dentro de triangulo = ' + str(dentroDeTriangulo))
-print('Dentro de recta = ' +str(dentroDeRecta))
-dibujadorSistemaSolar = DibujadorSistemaSolar(sistemaSolar)
-#dibujadorSistemaSolar.dibujar()
+    def test_CalcularAreaDeTriaguloEquilatero(self):
+        predictor = Predictor()
+        area = predictor.calcular_area_triangulo(0,0,1,0,0.5,1)
+        self.assertEqual(0.5, area)
+    
+    def test_CalcularAreaDeTriaguloIsoceles(self):
+        predictor = Predictor()
+        area = predictor.calcular_area_triangulo(1,1,5,1,3,2)
+        self.assertEqual(2, area)
+    
+    def test_DesplazarPlanetaSengunVelocidadAngulaDiariaYSentidoHorario(self):
+        planeta = Planeta('Ferengi',500,0,1, SentidoOrbita.HORARIO,500)
+        planeta.avanzar_posicion(90)
+        self.assertEqual(0,planeta.x)
+        self.assertEqual(-500,planeta.y)
+    
+    def test_DesplazarPlanetaSengunVelocidadAngulaDiariaYSentidoAntiHorario(self):
+        planeta = Planeta('Ferengi',500,0,1, SentidoOrbita.ANTIHORARIO,500)
+        planeta.avanzar_posicion(45)
+        self.assertEqual(353,planeta.x)
+        self.assertEqual(353,planeta.y)
+    
+    def test_ComprobarQueUnPuntoPertenceAUnaRecta(self):
+        predictor = Predictor()
+        pertenceALaRecta = predictor.punto_dentro_de_recta([(-1,0),(1,2)],(2,3))
+        self.assertEqual(True,pertenceALaRecta)
 
-predictor.generar_predicciones(sistemaSolar,365)
+    def test_ComprobarQueUnPuntoPertenceAUnaRectaQueContieneCero(self):
+        predictor = Predictor()
+        pertenceALaRecta = predictor.punto_dentro_de_recta([(0,0),(50,0)],(40,0))
+        self.assertEqual(True,pertenceALaRecta)
+    
+    def test_ComprobarQueUnPuntoNoPertenceAUnaRectaQueContieneCero(self):
+        predictor = Predictor()
+        pertenceALaRecta = predictor.punto_dentro_de_recta([(0,0),(50,0)],(40,40))
+        self.assertEqual(True,pertenceALaRecta)
+    
+    def test_ComprobarQueUnPuntoEstaDentroDeUnTriangulo(self):
+        predictor = Predictor()
+        pertenceAlTriangulo = predictor.punto_dentro_de_triangulo([(-1,-1),(1,-1),(0,1)],(0,0))
+        self.assertEqual(True, pertenceAlTriangulo)
+    
+    def test_ComprobarQueUnPuntoNoEstaDentroDeUnTriangulo(self):
+        predictor = Predictor()
+        pertenceAlTriangulo = predictor.punto_dentro_de_triangulo([(-1,-1),(1,-1),(0,1)],(5,5))
+        self.assertEqual(False, pertenceAlTriangulo)
+    
+    def test_ComprobarQueUnPuntoDelBordeEstaDentroDeUnTriangulo(self):
+        predictor = Predictor()
+        pertenceAlTriangulo = predictor.punto_dentro_de_triangulo([(-1,-1),(1,-1),(0,1)],(0,2))
+        self.assertEqual(False, pertenceAlTriangulo)
+
+if __name__ == '__main__':
+    unittest.main()
