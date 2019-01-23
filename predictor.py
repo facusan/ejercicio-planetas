@@ -1,6 +1,6 @@
 import csv
 import matplotlib.path as mpltPath
-from enviroment import AREA_MAXIMA
+from const import AREA_MAXIMA
 from datetime import timedelta
 from enum import Enum
 

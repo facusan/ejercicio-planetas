@@ -64,3 +64,5 @@ python unittest.py
 - No hay predicción para cuando no se cumple con las premisas del enunciado.
 - Si el sol se encuentra en el borde de un triangulo se considera como que esta dentro.
 - El area máxima se considera que es **1435791.5**, que fue obtenida después de ejecutar las predicciones para los 10 años.
+- En el archivo
+- No suelo programar en Python
