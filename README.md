@@ -58,7 +58,7 @@ python main.py
 ```
 Para correr los test se debe ejecutar
 ```
-python unittest.py
+python test.py
 ```
 ## Supuestos y aclaraciones
 - No hay predicción para cuando no se cumple con las premisas del enunciado.
