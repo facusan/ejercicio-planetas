@@ -38,16 +38,13 @@ tener una base de datos con las condiciones meteorológicas de todos los días y
 REST de consulta sobre las condiciones de un día en particular.
 1. Generar un modelo de datos con las condiciones de todos los días hasta 10 años en adelante
 utilizando un job para calcularlas.
-<br />
-**Las predicciones para los próximos 10 años se encuentran en el archivo 'predicciones_clima.csv' con formato DIA,CLIMA**
+    <br />**Las predicciones para los próximos 10 años se encuentran en el archivo 'predicciones_clima.csv' con formato DIA,CLIMA**
 2. Generar una API REST la cual devuelve en formato JSON la condición climática del día
 consultado.
-<br />
-**La implementacion de la API REST se encuentra en el archivo 'main.py'**
+    <br />**La implementacion de la API REST se encuentra en el archivo 'main.py'**
 3. Hostear el modelo de datos y la API REST en un cloud computing libre (como APP Engine o
 Cloudfoudry) y enviar la URL para consulta: 
-<br />
-**Se realizo deploy del servidor en Google Cloud Engine, con la URL: [https://planetas-mercado-libre.appspot.com](https://planetas-mercado-libre.appspot.com)**
+    <br />**Se realizo deploy del servidor en Google Cloud Engine, con la URL: [https://planetas-mercado-libre.appspot.com](https://planetas-mercado-libre.appspot.com)**
 ```
 Ej: GET → http://….../clima?dia=566 → Respuesta: {“dia”:566, “clima”:”lluvia”}
 ```
