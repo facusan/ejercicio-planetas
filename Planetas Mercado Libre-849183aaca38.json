@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "planetas-mercado-libre",
+  "private_key_id": "849183aaca38f5d3f568db0a5b1af41da2196970",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC5EFBzIa9h3/2l\ncV8TrzAILszTlwHv50N6k6anJ3760QMlGOZDK/kz7Gtf1BI8+GlcsF7U2akvvOu5\n6TqMXumcnLsQ2z6iDH1iyvgXJI9lgbHchmQBTRsa1dIPZArOOfIn01efTnHjWdBD\nLl0IndxxCbcocnn1i3ExznU0e2zb2qU1Oj6U72vVNKNP0kIY1rZs+wwHLw1EPCul\nsRiC8SdP5ZZl3WSoLi+BSUW5J4Yo5QE41Zx2+UHj/4i6KetS1sebCYLXQIWAwtaJ\nb3DFpr77xNFVuXaZ7Oq7ewD1E3xJVkLeHMUldjVUt5gDwImBQQSt9PLCg83XqwOW\n8bc9MVdPAgMBAAECggEAEkxaqAecn8DWA5XCIOAhj62Q8xrrRh1Hvsb6o2x0Ubh4\n5yIfImUmrsuhkkgVxZGKWW/W8JTU9bNoW2mEMHzx/FpC5NfIyZ0SiMIo5aDnzNGW\nFIf1O2u0UmLx8jOiHeH835M2Brpq6F/pB7t912xEb6jWQ1mOVYkEGDihvh62FMbO\nJcQKZBlO1+UZraiqpdBkIbvrzSBzjQJtf+mhoRW0YOjHUVNjzBLZLnSADYWQd+MK\nfrTPm3iM94/iLFAvH/7RLb1GzeAok1R0gjlIBbHpmDaDUXA4m1Waco5gYzsd715x\nhEz+2QkmkstN4bB0DdGxyz0YCKTVudRSzZho2d1rAQKBgQD9L2BM0S3K1IkVxDy9\nBQU76uBX8WEnFB9KqZKv+7/hxyj54KOa0q/ffoa/J87JaoVrRaCiz/bpAdDPOa/F\nNJMqp7g5FAzG5wjD6QtzkVy1kt33qc3ma9FVg3ZvQFpHn2SuxZkdAa0P6ZS9Sbf1\nN0W42JxkfIj7aN49LJq40pT6aQKBgQC7HwyBj8czmh1EvrEBB19Ozzfgm1M+yDZh\nNVupNf585cSA8ORAsJGzMuQV+WvHlwtsKZhIBYBvAKXOgumUGKgSBldt+9Dh3Dbr\nLCv1qNXCNvYye72nvkwGrJuGQ8FgfxqhQux19zkLB9KNGOoC+XpdBW3q9xdUsqto\nKCiYjwZc9wKBgQC6B8eAaep1sDiRr8DZOgkgf3Ib7BXwes6LM5G+kQHqSUYIZFCR\n/+COHQ+xAPTl9cjWizB+sMPBbT4aJU7LXdgMbXPlLKA+vZ8pI+DwJ4yxNZq20SOi\n/PGxHYk2MVika6+04yefso2QtZY+hx4NpXErYq13ADI+WE2DMXT1/HTOkQKBgF2y\nPmDhza1ZDi7ODXOmbWLY//HH1Pcq6Y/jV/JyxutjYfHurVx3DX3djbgzHHTkfSO7\n8DSgDJ+Ig33Ur4Eol3/vDPhVj1KJIja/94Ma9244dy7wJxdHgmoVJAsnAj1/Z6Y4\nDI9FK5sKX7OnNgYnRc4uWcu9zkDq9klBUpKRi24hAoGAchu16OXpQXTrJBiIY/zC\nOBEaxZ6x8pE/2k/xD0rv0Inje2cT6N1gQLJb6tXGPjox7d9BYCC98eHvjAArznPK\nOxtjurQ1X1m9R/ckGqkRXOKIu2Xc1sufBdHjhOedEdbIOlrA2cl2c9ZKvy0U/Fj7\n9QjhSflr0/QUXT9QZ1SlylU=\n-----END PRIVATE KEY-----\n",
+  "client_email": "planetas-mercado-libre@appspot.gserviceaccount.com",
+  "client_id": "109139840271644776579",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/planetas-mercado-libre%40appspot.gserviceaccount.com"
+}
