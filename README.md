@@ -63,5 +63,6 @@ python test.py
 - No hay predicción para cuando no se cumple con las premisas del enunciado.
 - Si el sol se encuentra en el borde de un triangulo se considera como que esta dentro.
 - El area máxima se considera que es **1435791.5**, que fue obtenida después de ejecutar las predicciones para los 10 años.
-- En el archivo
+- En el archivo util.py esta el codigo para dibujar el sistema solar en un dia n, y tambien se puede correr el script que genera el csv.
+- Se configuro [Travis CI](https://travis-ci.org/facusan/ejercicio-planetas) para las pruebas unitarias.
 - No suelo programar en Python
