@@ -18,14 +18,12 @@
                     <label for="diasInput">Dia</label>
                     <input type="text" class="form-control" id="diasInput" style="margin: 0 15px">
                 </div>
-                <input type="button" class="btn btn-primary mb-2" value="Predecir Clima" onclick="predecirDia()">
+                <input type="button" class="btn btn-primary mb-2 center" value="Predecir Clima" onclick="predecirDia()">
         </form>
         <div class="row">
             <div class="col">
                 <div id="divPrediccion">
                 </div>
-            </div>
-            <div class="col">
                 <figure id="figurePlot">
 
                 </figure>
@@ -53,7 +51,8 @@
             $.get("/imagen", { dia: $('#diasInput').val()} )
             .done(function( base64_string ) {
                 var image = $("<img>", {
-                "src": "data:image/png;base64," + base64_string
+                "src": "data:image/png;base64," + base64_string,
+                "class":'img-fluid'
                 });
                 $('#figurePlot').html(image);
             })
