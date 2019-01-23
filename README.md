@@ -1,4 +1,6 @@
-# Ejercio de planetas
+[![Build Status](https://travis-ci.org/facusan/ejercicio-planetas.svg?branch=master)](https://travis-ci.org/facusan/ejercicio-planetas)
+
+# Ejercicio de ingreso
 En una galaxia lejana, existen tres civilizaciones. Vulcanos, Ferengis y Betasoides. Cada
 civilización vive en paz en su respectivo planeta.
 Dominan la predicción del clima mediante un complejo sistema informático.
