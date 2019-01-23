@@ -10,3 +10,4 @@ script:
 deploy:
   provider: gae
   keyfile: d7ddddffa469.json
+  project: planetas-mercado-libre
