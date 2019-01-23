@@ -11,32 +11,27 @@
     <title>Planetas MeLi</title>
   </head>
   <body>
-    <div class="container">
-        <div class="row" style="padding-top:20%;margin:0 auto">
+    <div class="container" style="padding-top:5%;text-align: center">
+        <h1 style="padding-bottom: 20px">Predictor de clima</h1>
+        <form class="form-inline">
+                <div class="form-group mb-2">
+                    <label for="diasInput">Dia</label>
+                    <input type="text" class="form-control" id="diasInput" style="margin: 0 15px">
+                </div>
+                <input type="button" class="btn btn-primary mb-2" value="Predecir Clima" onclick="predecirDia()">
+        </form>
+        <div class="row">
             <div class="col">
-                <form>
-                    <div class="form-group row">
-                        <label for="diasInput" class="col-sm-2 col-form-label">Dias</label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="diasInput">
-                        </div>
-                        <input type="button" class="btn btn-primary" value="Predecir Clima" onclick="predecirDia()">
-                        
-                    </div>
-                </form>
+                <div id="divPrediccion">
+                </div>
             </div>
             <div class="col">
+                <figure id="figurePlot">
 
+                </figure>
             </div>
         </div>
-        <div id="divResult" class="row">
-          
-        </div>
-        <div id="divImageResult" class="row">
-          
-        </div>
-    </div>    
-
+    </div>   
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -47,15 +42,24 @@
         function predecirDia(){
             $.get("/clima", { dia: $('#diasInput').val()} )
             .done(function( data) {
-                var result = `<h2>El dia ${data.dia} el clima pronosticado es ${data.clima}</h2>`
-                $('#divResult').append(result);
+                var result = `<div class="alert alert-info"><h4>Para el dia ${data.dia} el clima pronosticado es: ${data.clima}</h4></div>`;
+                $('#divPrediccion').html(result);
+            })
+            .fail(function(error){
+                var result = `<div class="alert alert-danger"><h4>No se pudo obtener la prediccion. ERROR ${JSON.stringify(error)}</h4></div>`
+                $('#divPrediccion').html(result);    
             });
+            
             $.get("/imagen", { dia: $('#diasInput').val()} )
             .done(function( base64_string ) {
                 var image = $("<img>", {
                 "src": "data:image/png;base64," + base64_string
                 });
-                $('#divImageResult').append(image);
+                $('#figurePlot').html(image);
+            })
+            .fail(function(error){
+                var result = `<div class="alert alert-danger"><h4>No se pudo obtener imagen de la prediccion.</h4> ERROR ${JSON.stringify(error)}</div>`
+                $('#figurePlot').html(result);    
             });
         }
         
