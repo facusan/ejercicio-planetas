@@ -51,6 +51,10 @@ Cloudfoudry) y enviar la URL para consulta:
 Ej: GET → http://….../clima?dia=566 → Respuesta: {“dia”:566, “clima”:”lluvia”}
 ```
 ## Comandos para ejecutar las aplicaciones
+Se necesita [Python 3.7](https://www.python.org/downloads/) y para instalar las librerias necesarias se debe ejecutar la siguiente instrucción.
+```
+pip install -r requirements.txt
+```
 Para levantar el servidor se debe ejecutar por consola
 ```
 python main.py
