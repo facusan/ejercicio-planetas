@@ -9,4 +9,4 @@ script:
   - python test.py
 deploy:
   provider: gae
-  keyfile: gae-d7ddddffa469.json.enc
+  keyfile: d7ddddffa469.json
