@@ -1,6 +1,6 @@
 import csv
 import matplotlib.path as mpltPath
-from enviroment import FECHA_INICIAL, AREA_MAXIMA
+from enviroment import AREA_MAXIMA
 from datetime import timedelta
 from enum import Enum
 
@@ -63,8 +63,8 @@ class Predictor:
                     str(Clima.LLUVIA_INTESA.value): 0, 
                     str(Clima.SIN_PRONOSTICO.value): 0 }
 
-        with open('planetas.csv', 'w', newline='') as writeFile:
-            writer = csv.writer(writeFile, delimiter=';')
+        with open('predicciones_clima.csv', 'w', newline='') as writeFile:
+            writer = csv.writer(writeFile, delimiter=',')
             dia = 1
             clima_anterior = ''
             while dia <= ndias:
@@ -72,7 +72,7 @@ class Predictor:
                 sistemaSolar.avanzar_posiciones(dia)
                 listaPlanetas = list(map(lambda p: (p.x,p.y), sistemaSolar.planetas))
                 clima = self.predecir_clima(listaPlanetas,sistemaSolar.posicion_sol)
-
+                estado_sistema.append(dia)
                 estado_sistema.append(clima)
                 
                 if clima_anterior != clima:

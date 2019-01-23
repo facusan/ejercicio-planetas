@@ -1,6 +1,5 @@
 import math
 from enum import IntEnum
-from enviroment import FECHA_INICIAL
 
 class SentidoOrbita(IntEnum):
     HORARIO = -1
