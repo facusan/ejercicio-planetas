@@ -9,4 +9,4 @@ script:
   - python test.py
 deploy:
   provider: gae
-  keyfile: "Planetas Mercado Libre-849183aaca38.json"
+  keyfile: gae-849183aaca38.json
